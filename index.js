@@ -11,10 +11,10 @@ const client = new Client({
   ],
 });
 
-client.on('messageCreate', (message) => {
-  if (message.author.bot) return; // Ignore messages from bots
-  message.reply('Hello! I am your mentor bot. How can I assist you today?');
-});
+// client.on('messageCreate', (message) => {
+//   if (message.author.bot) return; // Ignore messages from bots
+//   message.reply('Hello! I am your mentor bot. How can I assist you today?');
+// });
 
 client.on("interactionCreate", interaction => {
   console.log(interaction);
