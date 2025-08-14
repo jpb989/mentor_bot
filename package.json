@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node index.js",
+    "register": "node deploy-commands.js",
     "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cerebras/cerebras_cloud_sdk": "^1.46.0",
     "discord.js": "^14.21.0",
     "dotenv": "^17.2.1"
   },
