@@ -1,12 +1,10 @@
 const config = require('./config');
 const { REST, Routes } = require('discord.js');
+const loadCommands = require('./utils/loadCommands');
 
-const commands = [
-  {
-    name: 'ping',
-    description: 'Replies with Pong!',
-  },
-];
+
+const { commands } = loadCommands();
+
 
 const rest = new REST({ version: '10' }).setToken(config.token);
 
@@ -23,3 +21,4 @@ const rest = new REST({ version: '10' }).setToken(config.token);
     console.error(error);
   }
 })();
+
