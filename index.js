@@ -15,10 +15,10 @@ const client = new Client({
 const { commandMap } = loadCommands();
 client.commands = new Collection(commandMap);
 
-client.on(Events.InteractionCreate, async interaction => {
+client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
   const command = client.commands.get(interaction.commandName);
-  if (!command){
+  if (!command) {
     console.error(`No command matching ${interaction.commandName} found.`);
     return;
   }
@@ -26,10 +26,11 @@ client.on(Events.InteractionCreate, async interaction => {
     await command.execute(interaction);
   } catch (error) {
     console.error(error);
-    await interaction.reply({ content: 'There was an error executing this command!', ephemeral: true });    
+    await interaction.reply({
+      content: 'There was an error executing this command!',
+      ephemeral: true,
+    });
   }
-
 });
-
 
 client.login(config.token);
