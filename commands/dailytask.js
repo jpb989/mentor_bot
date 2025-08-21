@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ComponentType } = require('discord.js');
 const Cerebras = require('@cerebras/cerebras_cloud_sdk');
 const config = require('../config');
-const { dailyTaskSysPrompt, dailyTaskUserPrompt } = require('../prompts/dailytaskprompt.js');
+const { dailyTaskSysPrompt, dailyTaskUserPrompt } = require('../prompts/dailytaskPrompt.js');
 
 const cerebras = new Cerebras({
     apiKey: config.cerebras_api_key,
